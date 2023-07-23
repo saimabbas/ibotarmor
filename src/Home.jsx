@@ -1,19 +1,21 @@
 import React from "react";
 import "./style.css";
 import Logo1 from "./assets/img/logo-2.png";
-import HeroImg1 from "./assets/img/hero-img-8.jpg";
+import HeroImg1 from "./assets/img/hero-img.svg";
 import HeroCardImg1 from "./assets/img/hero-card-1.png";
 import HeroCardImg2 from "./assets/img/hero-card-2.png";
 import HeroCardImg3 from "./assets/img/hero-card-3.png";
 import HeroCardImg4 from "./assets/img/hero-card-4.png";
-import ServiceImg1 from "./assets/img/service-img-1.jpg";
-import ServiceImg2 from "./assets/img/service-img-2.jpg";
-import AboutImg from "./assets/img/about-img.jpg";
+import ServiceImg1 from "./assets/img/service-img-2.jpg";
+import ServiceImg2 from "./assets/img/service-img-1.jpg";
+import AboutImg from "./assets/img/about-img.png";
 import TelephoneImg from "./assets/img/telephone.png";
 import EmailImg from "./assets/img/email.png";
 import LocationImg from "./assets/img/location.png";
-import SectionBg from "./assets/img/hero-img-3.jpg";
+import DemoBg from "./assets/img/demo-bg.png";
 import BgImg from "./assets/img/bg.jpg";
+import { BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
+import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
 
 const Home = () => {
   return (
@@ -24,74 +26,103 @@ const Home = () => {
           <div className="header-content">
             <img src={Logo1} alt="" />
             <div className="header-links">
-              <a href="">Home</a>
-              <a href="">Services</a>
-              <a href="">About Us</a>
-              <a href="">Contact</a>
-              <button>Request a Demo</button>
+              <a href="#home">Home</a>
+              <a href="#services">Services</a>
+              <a href="#about">About Us</a>
+              <a href="#contact">Contact</a>
+              {/* <a href="#requestademo">Request a Demo</a> */}
             </div>
           </div>
         </div>
       </header>
-      <section className="hero-section">
-        <img className="hero-img" src={HeroImg1} alt="" />
-        <div className="hero-blade"></div>
+      <section className="hero-section" id="home">
         <div className="box">
           <div className="hero-content">
-            <h1 className="ops">
-              Shielding Your <br /> Cyber Space<span className="ops">.</span>
-            </h1>
-            <div className="hero-grid">
-              <div className="hero-grid-card">
-                <img src={HeroCardImg1} alt="" />
-                <h3>Advanced Bot Detection.</h3>
-                <p>
-                  Our service utilizes state-of-the-art algorithms to identify
-                  and block malicious bots, ensuring a safe browsing experience
-                  for your users.
-                </p>
+            <div className="hero-content-left">
+              <h1 className="ops">
+                Shielding Your
+                <br />
+                Cyber Space
+                <span className="ops">.</span>
+              </h1>
+              <p>
+                Our service utilizes state-of-the-art algorithms to identify and
+                block malicious bots, ensuring a safe browsing experience for
+                your users.
+              </p>
+              <div className="social-icons-grid">
+                <a href="#">
+                  <BsTwitter />
+                </a>
+                <a href="#">
+                  <BsInstagram />
+                </a>
+                <a href="#">
+                  <BsLinkedin />
+                </a>
               </div>
-              <div className="hero-grid-card">
-                <img src={HeroCardImg2} alt="" />
-                <h3>Real-time Threat Monitering.</h3>
-                <p>
-                  We constantly monitor and analyze bot activity to stay one
-                  step ahead, adapting our security measures to counter evolving
-                  threats.
-                </p>
-              </div>
-              <div className="hero-grid-card">
-                <img src={HeroCardImg3} alt="" />
-                <h3>Robust Bot Protection.</h3>
-                <p>
-                  Our solution offers comprehensive protection against a wide
-                  range of bot attacks, including credential stuffing, scraping,
-                  and automated account creation.
-                </p>
-              </div>
-              <div className="hero-grid-card">
-                <img src={HeroCardImg4} alt="" />
-                <h3>Easy Integration.</h3>
-                <p>
-                  Integrating our anti-bot service is simple and hassle-free,
-                  with flexible options to fit your existing infrastructure and
-                  platforms.
-                </p>
-              </div>
+              <a className="button-19" href="#requestademo">
+                Request a Demo
+              </a>
+            </div>
+            <div className="hero-content-right">
+              <img className="hero-img" src={HeroImg1} alt="" />
             </div>
           </div>
         </div>
       </section>
-      <section className="services-section">
+      <div className="box">
+        <div className="hero-grid">
+          <div className="hero-grid-card">
+            <img src={HeroCardImg1} alt="" />
+            <h3>Advanced Bot Detection.</h3>
+            <p>
+              Our service utilizes state-of-the-art algorithms to identify and
+              block malicious bots, ensuring a safe browsing experience for your
+              users.
+            </p>
+          </div>
+          <div className="hero-grid-card">
+            <img src={HeroCardImg2} alt="" />
+            <h3>Real-time Threat Monitering.</h3>
+            <p>
+              We constantly monitor and analyze bot activity to stay one step
+              ahead, adapting our security measures to counter evolving threats.
+            </p>
+          </div>
+          <div className="hero-grid-card">
+            <img src={HeroCardImg3} alt="" />
+            <h3>Robust Bot Protection.</h3>
+            <p>
+              Our solution offers comprehensive protection against a wide range
+              of bot attacks, including credential stuffing, scraping, and
+              automated account creation.
+            </p>
+          </div>
+          <div className="hero-grid-card">
+            <img src={HeroCardImg4} alt="" />
+            <h3>Easy Integration.</h3>
+            <p>
+              Integrating our anti-bot service is simple and hassle-free, with
+              flexible options to fit your existing infrastructure and
+              platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+      <section className="services-section" id="services">
         <div className="box">
-          <h2 className="ops">Services</h2>
+          <div class="section-heading">
+            <h2 className="ops">Services</h2>
+          </div>
+
           <div className="services-content">
             <div className="services-grid">
-              <div className="services-grid-card">
+              <div className="services-grid-card ">
                 <div className="services-img">
                   <img src={ServiceImg1} alt="" />
                 </div>
-                <div className="services-content">
+                <div className="services-textbox">
                   <h3>VaultGuard</h3>
                   <p>
                     VaultGuard by BotArmor Technologies provides an innovative
@@ -115,14 +146,13 @@ const Home = () => {
                     <h5>$25/Month</h5>
                     <h5>$35/Month</h5>
                   </div>
-                  <button>Request a Demo</button>
+                  <a className="button-19" href="#requestademo">
+                    Request a Demo
+                  </a>
                 </div>
               </div>
-              <div className="services-grid-card">
-                <div className="services-img">
-                  <img src={ServiceImg2} alt="" />
-                </div>
-                <div className="services-content">
+              <div className="services-grid-card ">
+                <div className="services-textbox">
                   <h3>Armor Bot Manager</h3>
                   <p>
                     VaultGuard by BotArmor Technologies provides an innovative
@@ -146,20 +176,26 @@ const Home = () => {
                     <h5>$25/Month</h5>
                     <h5>$35/Month</h5>
                   </div>
-                  <button>Request a Demo</button>
+                  <a className="button-19" href="#requestademo">
+                    Request a Demo
+                  </a>
+                </div>
+
+                <div className="services-img">
+                  <img src={ServiceImg2} alt="" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="about-section">
+      <section className="about-section" id="about">
+        <img className="about-img" src={AboutImg} alt="" />
         <div className="box">
-          <h2 className="ops">About Us</h2>
+          <div class="section-heading">
+            <h2 className="ops">About</h2>
+          </div>
           <div className="about-grid">
-            <div className="about-grid-left">
-              <img src={AboutImg} alt="" />
-            </div>
             <div className="about-grid-right">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -186,22 +222,34 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="contact-section">
+      <section className="contact-section" id="contact">
         <div className="box">
-          <h2 className="ops">Contact</h2>
+          <div class="section-heading">
+            <h2 className="ops">Contact</h2>
+          </div>
           <div className="contact-grid">
             <div className="contact-left">
               <p>BotArmor Technologies</p>
               <p>
-                <img src={EmailImg} alt="" /> botarmortech@gmail.com
+                <MdEmail /> botarmortech@gmail.com
               </p>
               <p>
-                <img src={LocationImg} alt="" /> 3069 Brighton 1st St, Brooklyn,
-                NY, 11235
+                <MdLocationOn /> 3069 Brighton 1st St, Brooklyn, NY, 11235
               </p>
               <p>
-                <img src={TelephoneImg} alt="" /> (917) 528 8208
+                <MdPhone /> (917) 528 8208
               </p>
+              <div className="social-icons-grid">
+                <a href="#">
+                  <BsTwitter />
+                </a>
+                <a href="#">
+                  <BsInstagram />
+                </a>
+                <a href="#">
+                  <BsLinkedin />
+                </a>
+              </div>
             </div>
             <form className="contact-right">
               <input type="text" name="" id="" placeholder="Name" />
@@ -218,10 +266,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="demo-section">
-        <img className="section-bg" src={SectionBg} alt="" />
+      <section className="demo-section" id="requestademo">
+        <img className="section-bg" src={DemoBg} alt="" />
         <div className="box">
-          <h2 className="ops">Request a Demo</h2>
+          <div class="section-heading">
+            <h2 className="ops">Request a Demo</h2>
+          </div>
           <div className="demo-content">
             <input type="text" placeholder="First Name" />
             <input type="text" placeholder="Last Name" />
@@ -233,8 +283,9 @@ const Home = () => {
               <option value="VaultGuard">VaultGuard</option>
               <option value="Armor Bot Manager">Armor Bot Manager</option>
             </select>
-            <button>Request a Demo</button>
+            <button className="button-19">Request a Demo</button>
           </div>
+          <footer>© Copyright 2022 iBotArmor</footer>
         </div>
       </section>
     </main>
