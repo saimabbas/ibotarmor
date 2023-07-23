@@ -308,19 +308,30 @@ header {
   color: var(--white);
   margin: 0.5rem 0 0 0;
 }
-.services-content ul {
+.services-textbox > ul {
   width: 100%;
   padding: 2.5rem 0;
 }
-.services-content li {
+.services-textbox > ul li {
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
-  list-style-image: url("./assets/img/check.png");
+  /* list-style-image: url("./assets/img/check.png"); */
   color: var(--white);
   list-style-position: inside;
 }
 .services-content .button-19 {
   width: 100%;
+}
+.price-features {
+  width: 100%;
+  margin: 0 0 2.5rem 0;
+}
+.price-features li {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  list-style-image: url("./assets/img/check.png");
+  color: var(--white);
+  list-style-position: inside;
 }
 .price-grid {
   width: 100%;
@@ -329,8 +340,8 @@ header {
   grid-template-rows: auto;
   grid-gap: 0;
   margin: 0 0 2.5rem 0;
-
-  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -342,6 +353,10 @@ header {
   padding: 1.5rem 0;
   text-align: center;
   color: var(--white);
+  cursor: pointer;
+}
+.price-grid h5.price-active {
+  background: rgba(255, 255, 255, 0.25);
 }
 .price-grid h5:nth-child(2) {
   border-left: 2px solid rgba(255, 255, 255, 0.3);

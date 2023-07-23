@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import Logo1 from "./assets/img/logo-2.png";
 import HeroImg1 from "./assets/img/hero-img.svg";
@@ -18,6 +18,12 @@ import { BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
 
 const Home = () => {
+  const [price21, setPrice21] = useState(true);
+  const [price22, setPrice22] = useState(false);
+  const [price23, setPrice23] = useState(false);
+  const [price11, setPrice11] = useState(true);
+  const [price12, setPrice12] = useState(false);
+  const [price13, setPrice13] = useState(false);
   return (
     <main className="ibotarmor">
       <img className="bg-img" src={BgImg} alt="" />
@@ -112,7 +118,7 @@ const Home = () => {
       </div>
       <section className="services-section" id="services">
         <div className="box">
-          <div class="section-heading">
+          <div className="section-heading">
             <h2 className="ops">Services</h2>
           </div>
 
@@ -141,10 +147,61 @@ const Home = () => {
                     <li>Endpoint Protection</li>
                     <li>Data Encryption and Secure Communication</li>
                   </ul>
+
                   <div className="price-grid">
-                    <h5>$15/Month</h5>
-                    <h5>$25/Month</h5>
-                    <h5>$35/Month</h5>
+                    <h5
+                      onClick={() => {
+                        setPrice11(true);
+                        setPrice12(false);
+                        setPrice13(false);
+                      }}
+                      className={price11 ? "price-active" : ""}
+                    >
+                      $15/Month
+                    </h5>
+                    <h5
+                      onClick={() => {
+                        setPrice11(false);
+                        setPrice12(true);
+                        setPrice13(false);
+                      }}
+                      className={price12 ? "price-active" : ""}
+                    >
+                      $25/Month
+                    </h5>
+                    <h5
+                      onClick={() => {
+                        setPrice11(false);
+                        setPrice12(false);
+                        setPrice13(true);
+                      }}
+                      className={price13 ? "price-active" : ""}
+                    >
+                      $35/Month
+                    </h5>
+                  </div>
+                  <div className="price-features">
+                    {price11 ? (
+                      <ul>
+                        <li>Price Feature no. 1 for $15/Month</li>
+                        <li>Price Feature no. 2 for $15/Month</li>
+                        <li>Price Feature no. 3 for $15/Month</li>
+                      </ul>
+                    ) : null}
+                    {price12 ? (
+                      <ul>
+                        <li>Price Feature no. 1 for $25/Month</li>
+                        <li>Price Feature no. 2 for $25/Month</li>
+                        <li>Price Feature no. 3 for $25/Month</li>
+                      </ul>
+                    ) : null}
+                    {price13 ? (
+                      <ul>
+                        <li>Price Feature no. 1 for $35/Month</li>
+                        <li>Price Feature no. 2 for $35/Month</li>
+                        <li>Price Feature no. 3 for $35/Month</li>
+                      </ul>
+                    ) : null}
                   </div>
                   <a className="button-19" href="#requestademo">
                     Request a Demo
@@ -165,16 +222,65 @@ const Home = () => {
                     resources from bot attacks or data breaches.
                   </p>
                   <ul>
-                    <li>Vulnerability Assessments and Penetration Testing</li>
                     <li>Managed Security Services:</li>
                     <li>Firewall and Intrusion Detection/Prevention Systems</li>
                     <li>Endpoint Protection</li>
                     <li>Data Encryption and Secure Communication</li>
                   </ul>
                   <div className="price-grid">
-                    <h5>$15/Month</h5>
-                    <h5>$25/Month</h5>
-                    <h5>$35/Month</h5>
+                    <h5
+                      onClick={() => {
+                        setPrice21(true);
+                        setPrice22(false);
+                        setPrice23(false);
+                      }}
+                      className={price21 ? "price-active" : ""}
+                    >
+                      $15/Month
+                    </h5>
+                    <h5
+                      onClick={() => {
+                        setPrice21(false);
+                        setPrice22(true);
+                        setPrice23(false);
+                      }}
+                      className={price22 ? "price-active" : ""}
+                    >
+                      $25/Month
+                    </h5>
+                    <h5
+                      onClick={() => {
+                        setPrice21(false);
+                        setPrice22(false);
+                        setPrice23(true);
+                      }}
+                      className={price23 ? "price-active" : ""}
+                    >
+                      $35/Month
+                    </h5>
+                  </div>
+                  <div className="price-features">
+                    {price21 ? (
+                      <ul>
+                        <li>Price Feature no. 1 for $15/Month</li>
+                        <li>Price Feature no. 2 for $15/Month</li>
+                        <li>Price Feature no. 3 for $15/Month</li>
+                      </ul>
+                    ) : null}
+                    {price22 ? (
+                      <ul>
+                        <li>Price Feature no. 1 for $25/Month</li>
+                        <li>Price Feature no. 2 for $25/Month</li>
+                        <li>Price Feature no. 3 for $25/Month</li>
+                      </ul>
+                    ) : null}
+                    {price23 ? (
+                      <ul>
+                        <li>Price Feature no. 1 for $35/Month</li>
+                        <li>Price Feature no. 2 for $35/Month</li>
+                        <li>Price Feature no. 3 for $35/Month</li>
+                      </ul>
+                    ) : null}
                   </div>
                   <a className="button-19" href="#requestademo">
                     Request a Demo
@@ -192,7 +298,7 @@ const Home = () => {
       <section className="about-section" id="about">
         <img className="about-img" src={AboutImg} alt="" />
         <div className="box">
-          <div class="section-heading">
+          <div className="section-heading">
             <h2 className="ops">About</h2>
           </div>
           <div className="about-grid">
@@ -224,7 +330,7 @@ const Home = () => {
       </section>
       <section className="contact-section" id="contact">
         <div className="box">
-          <div class="section-heading">
+          <div className="section-heading">
             <h2 className="ops">Contact</h2>
           </div>
           <div className="contact-grid">
@@ -269,7 +375,7 @@ const Home = () => {
       <section className="demo-section" id="requestademo">
         <img className="section-bg" src={DemoBg} alt="" />
         <div className="box">
-          <div class="section-heading">
+          <div className="section-heading">
             <h2 className="ops">Request a Demo</h2>
           </div>
           <div className="demo-content">
