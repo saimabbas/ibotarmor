@@ -192,7 +192,11 @@ header {
 .button-19:disabled {
   cursor: auto;
 }
-
+#Key,
+#Lock,
+#Shield {
+  opacity: 0;
+}
 .hero-content-right {
   width: 100%;
   height: 100%;
@@ -203,7 +207,7 @@ header {
   z-index: 4;
   padding: 0 0 2.5rem 0;
 }
-.hero-content-right img {
+.hero-img {
   width: 100%;
   object-fit: contain;
 }
@@ -214,12 +218,16 @@ header {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 2.5rem;
-  margin: 2.5rem 0;
+  margin: 2.5rem 0 0 0;
 }
 .hero-grid-card {
   width: 100%;
   padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.15)
+  );
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -233,7 +241,7 @@ header {
   font-size: 1.65rem;
   font-weight: 600;
   color: var(--white);
-  margin: 2.5rem 0 0.5rem 0;
+  margin: 2rem 0 1rem 0;
   opacity: 0.85;
 }
 .hero-grid-card p {
@@ -316,14 +324,14 @@ header {
 .services-content p {
   font-size: 1.65rem;
   color: var(--white);
-  margin: 0.5rem 0 0 0;
+  margin: 1rem 0 0 0;
 }
 .services-textbox > ul {
   width: 100%;
   padding: 2.5rem 0;
 }
 .services-textbox > ul li {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   margin: 0 0 0.5rem 0;
   /* list-style-image: url("./assets/img/check.png"); */
   color: var(--white);
@@ -396,7 +404,7 @@ header {
   position: absolute;
   top: 50%;
   left: 0;
-  z-index: 6;
+  z-index: 4;
 }
 .about-grid {
   width: 100%;
@@ -556,4 +564,115 @@ footer {
   color: var(--white);
   font-size: 1.65rem;
   text-shadow: 1px 1px black;
+}
+@media only screen and (max-width: 1250px) {
+  .box {
+    padding: 0 5rem;
+  }
+  .hero-grid {
+    grid-gap: 1.5rem;
+  }
+  .hero-grid-card {
+    padding: 1.5rem;
+  }
+  .hero-grid-card p {
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .section-heading h2 {
+    font-size: 4rem;
+  }
+  .section-heading {
+    margin: 0 0 2.5rem 0;
+  }
+  .services-grid-card-top {
+    flex-direction: column;
+  }
+  .services-img {
+    max-width: 100%;
+  }
+  .services-img img {
+    border-radius: 0;
+    max-height: 25rem;
+  }
+  .services-textbox {
+    padding: 2.5rem;
+  }
+  .services-grid-card-bottom {
+    padding: 0 2.5rem 2.5rem 2.5rem;
+  }
+  .services-content p {
+    font-size: 1.5rem;
+  }
+  .services-textbox > ul li {
+    font-size: 1.5rem;
+  }
+  .price-grid-card li {
+    font-size: 1.35rem;
+  }
+  .contact-grid {
+    grid-gap: 2.5rem;
+  }
+  .contact-left p:nth-child(1) {
+    font-size: 2rem;
+  }
+  .section-bg {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .box {
+    padding: 0 2rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-heading h2 {
+    font-size: 3rem;
+  }
+  .services-textbox {
+    padding: 1.5rem;
+  }
+  .services-grid-card-bottom {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+  .price-grid-card:nth-child(2) {
+    border-left: 0px solid rgba(255, 255, 255, 0.3);
+    border-right: 0px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  .services-content h3 {
+    font-size: 2.5rem;
+  }
+  .services-section,
+  .about-section {
+    padding: 3.5rem 0;
+  }
+  .about-img {
+    width: 100%;
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-left p:nth-child(1) {
+    margin: 0 0 1.5rem 0;
+  }
+  .contact-left p {
+    margin: 0 0 1rem 0;
+  }
+  .social-icons-grid a {
+    margin: 0 1.5rem 0 0;
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import Logo1 from "./assets/img/logo-2.png";
 import HeroImg1 from "./assets/img/hero-img.svg";
@@ -9,19 +9,29 @@ import HeroCardImg4 from "./assets/img/hero-card-4.png";
 import ServiceImg1 from "./assets/img/service-img-2.jpg";
 import ServiceImg2 from "./assets/img/service-img-1.jpg";
 import AboutImg from "./assets/img/about-img.png";
-import TelephoneImg from "./assets/img/telephone.png";
-import EmailImg from "./assets/img/email.png";
-import LocationImg from "./assets/img/location.png";
 import DemoBg from "./assets/img/demo-bg.png";
 import BgImg from "./assets/img/bg.jpg";
 import ServicesImgBg from "./assets/img/services-bg.png";
 import { BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
+import HeroImg from "./components/HeroImg";
+import gsap from "gsap";
+import {
+  Back,
+  Power3,
+  Power1,
+  Power2,
+  Power4,
+  Linear,
+  Expo,
+  Circ,
+} from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Home = () => {
-  const [price21, setPrice21] = useState(true);
-  const [price22, setPrice22] = useState(false);
-  const [price23, setPrice23] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {}, []);
+
   return (
     <main className="ibotarmor">
       <img className="bg-img" src={BgImg} alt="" />
@@ -44,9 +54,7 @@ const Home = () => {
           <div className="hero-content">
             <div className="hero-content-left">
               <h1 className="ops">
-                Shielding Your
-                <br />
-                Cyber Space
+                Shielding Your Cyber Space
                 <span className="ops">.</span>
               </h1>
               <p>
@@ -70,7 +78,7 @@ const Home = () => {
               </a>
             </div>
             <div className="hero-content-right">
-              <img className="hero-img" src={HeroImg1} alt="" />
+              <HeroImg className="hero-img" />
             </div>
           </div>
         </div>
