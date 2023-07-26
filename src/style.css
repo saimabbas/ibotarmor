@@ -539,12 +539,29 @@ header {
 .demo-section .box > h2 {
   margin: 0 0 2.5rem 0;
 }
+.demo-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem;
+  margin: 5rem 0;
+}
+.demo-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo-img img,
+.demo-img svg {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
 .demo-content {
   width: 100%;
-  max-width: 650px;
-  margin: 0 auto;
   padding: 3.5rem;
-
+  height: max-content;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -564,6 +581,24 @@ footer {
   color: var(--white);
   font-size: 1.65rem;
   text-shadow: 1px 1px black;
+}
+.wave-img-1 {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  object-fit: contain;
+  z-index: 2;
+  opacity: 0.35;
+}
+.wave-img-2 {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  object-fit: contain;
+  z-index: 2;
+  opacity: 0.35;
 }
 @media only screen and (max-width: 1250px) {
   .box {

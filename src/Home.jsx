@@ -9,12 +9,15 @@ import HeroCardImg4 from "./assets/img/hero-card-4.png";
 import ServiceImg1 from "./assets/img/service-img-2.jpg";
 import ServiceImg2 from "./assets/img/service-img-1.jpg";
 import AboutImg from "./assets/img/about-img.png";
-import DemoBg from "./assets/img/demo-bg.png";
+import WaveImg1 from "./assets/img/wave-1.png";
+import WaveImg2 from "./assets/img/wave-2.png";
+import DemoImgPng from "./assets/img/11.png";
 import BgImg from "./assets/img/bg.jpg";
 import ServicesImgBg from "./assets/img/services-bg.png";
 import { BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
 import HeroImg from "./components/HeroImg";
+import DemoImg from "./components/DemoImg";
 import gsap from "gsap";
 import {
   Back,
@@ -123,7 +126,8 @@ const Home = () => {
         </div>
       </div>
       <section className="services-section" id="services">
-        <img className="services-img-bg" src={ServicesImgBg} alt="" />
+        <img className="wave-img-1" src={WaveImg1} alt="" />
+        {/* <img className="services-img-bg" src={ServicesImgBg} alt="" /> */}
         <div className="box">
           <div className="section-heading">
             <h2 className="ops">Services</h2>
@@ -255,7 +259,7 @@ const Home = () => {
         </div>
       </section>
       <section className="about-section" id="about">
-        <img className="about-img" src={AboutImg} alt="" />
+        {/* <img className="about-img" src={AboutImg} alt="" /> */}
         <div className="box">
           <div className="section-heading">
             <h2 className="ops">About</h2>
@@ -332,24 +336,34 @@ const Home = () => {
         </div>
       </section>
       <section className="demo-section" id="requestademo">
-        <img className="section-bg" src={DemoBg} alt="" />
+        <img className="wave-img-2" src={WaveImg2} alt="" />
+
+        {/* <img className="section-bg" src={DemoBg} alt="" /> */}
         <div className="box">
           <div className="section-heading">
             <h2 className="ops">Request a Demo</h2>
           </div>
-          <div className="demo-content">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="text" placeholder="Email" />
-            <input type="text" placeholder="Company Name" />
-            <input type="text" placeholder="Position in Company" />
-            <select name="" id="">
-              <option value="">Select Service</option>
-              <option value="VaultGuard">VaultGuard</option>
-              <option value="Armor Bot Manager">Armor Bot Manager</option>
-            </select>
-            <button className="button-19">Request a Demo</button>
+          <div className="demo-grid">
+            <div className="demo-img">
+              {/* <DemoImg /> */}
+              <img src={DemoImgPng} alt="" />
+            </div>
+
+            <div className="demo-content">
+              <input type="text" placeholder="First Name" />
+              <input type="text" placeholder="Last Name" />
+              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Company Name" />
+              <input type="text" placeholder="Position in Company" />
+              <select name="" id="">
+                <option value="">Select Service</option>
+                <option value="VaultGuard">VaultGuard</option>
+                <option value="Armor Bot Manager">Armor Bot Manager</option>
+              </select>
+              <button className="button-19">Request a Demo</button>
+            </div>
           </div>
+
           <footer>© Copyright 2022 iBotArmor</footer>
         </div>
       </section>

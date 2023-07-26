@@ -182,7 +182,7 @@ const SvgComponent = (props) => {
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="0 0 481.37 381.78"
-        {...props}
+        className={props.className}
       >
         <defs>
           <linearGradient
