@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import Logo1 from "./assets/img/logo-2.png";
+import Logo1 from "./assets/img/logo-2-white.png";
 import HeroImg1 from "./assets/img/hero-img.svg";
 import HeroCardImg1 from "./assets/img/hero-card-1.png";
 import HeroCardImg2 from "./assets/img/hero-card-2.png";
@@ -33,21 +33,55 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    var headerAnim = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#home",
+        start: "bottom 75%",
+        toggleActions: "restart none none reset",
+      },
+    });
+    headerAnim
+      .fromTo(
+        "header",
+        {
+          backgroundColor: "rgba(47, 113, 201, 0)",
+          backdropFilter: "blur(0px)",
+          borderRadius: "0",
+        },
+        {
+          backgroundColor: "rgba(47, 113, 201, 0.25)",
+          backdropFilter: "blur(20px)",
+          borderRadius: "0 0 2.5rem 2.5rem",
+          duration: 0.5,
+        }
+      )
+      .fromTo(
+        ".header-content",
+        {
+          height: "10rem",
+        },
+        {
+          height: "5rem",
+          duration: 0.5,
+        },
+        0
+      );
+  }, []);
 
   return (
     <main className="ibotarmor">
-      <img className="bg-img" src={BgImg} alt="" />
-      <header>
+      {/* <img className="bg-img" src={BgImg} alt="" /> */}
+      <header id="header">
         <div className="box">
           <div className="header-content">
             <img src={Logo1} alt="" />
             <div className="header-links">
-              <a href="#home">Home</a>
               <a href="#services">Services</a>
               <a href="#about">About Us</a>
               <a href="#contact">Contact</a>
-              {/* <a href="#requestademo">Request a Demo</a> */}
+              <a href="#requestademo">Request a Demo</a>
             </div>
           </div>
         </div>
@@ -337,7 +371,6 @@ const Home = () => {
       </section>
       <section className="demo-section" id="requestademo">
         <img className="wave-img-2" src={WaveImg2} alt="" />
-
         {/* <img className="section-bg" src={DemoBg} alt="" /> */}
         <div className="box">
           <div className="section-heading">
@@ -345,8 +378,8 @@ const Home = () => {
           </div>
           <div className="demo-grid">
             <div className="demo-img">
-              {/* <DemoImg /> */}
-              <img src={DemoImgPng} alt="" />
+              <DemoImg />
+              {/* <img src={DemoImgPng} alt="" /> */}
             </div>
 
             <div className="demo-content">
@@ -363,7 +396,6 @@ const Home = () => {
               <button className="button-19">Request a Demo</button>
             </div>
           </div>
-
           <footer>© Copyright 2022 iBotArmor</footer>
         </div>
       </section>
