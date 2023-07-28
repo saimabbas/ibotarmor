@@ -120,6 +120,7 @@ header {
 .header-content img {
   width: max-content;
   height: 3.5rem;
+  object-fit: contain;
 }
 .open-header {
   display: none;
@@ -580,6 +581,7 @@ header {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 4.25rem;
 }
 
 .demo-content input::placeholder,
