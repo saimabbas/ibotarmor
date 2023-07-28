@@ -61,6 +61,47 @@ body {
   left: 0;
   z-index: 1;
 }
+.header-mob {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(47, 113, 201, 0.25);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+}
+.header-mob-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8.5rem;
+}
+.header-mob-head img {
+  height: 3.5rem;
+  object-fit: contain;
+}
+.header-mob-head svg {
+  font-size: 2.5rem;
+  color: var(--white);
+}
+.header-mob-body {
+  width: 100%;
+  padding: 5rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-mob-body a {
+  width: 100%;
+  margin: 0 0 5rem 0;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
 header {
   width: 100%;
   position: fixed;
@@ -79,6 +120,13 @@ header {
 .header-content img {
   width: max-content;
   height: 3.5rem;
+}
+.open-header {
+  display: none;
+}
+.open-header svg {
+  font-size: 2.5rem;
+  color: var(--white);
 }
 .header-links {
   width: max-content;
@@ -641,6 +689,9 @@ footer {
   opacity: 0.35;
 }
 @media only screen and (max-width: 1250px) {
+  .hero-content-right {
+    align-items: center;
+  }
   .box {
     padding: 0 5rem;
   }
@@ -700,13 +751,43 @@ footer {
   .section-bg {
     width: 100%;
   }
+  .hero-content {
+    grid-template-columns: 1fr;
+    height: max-content;
+  }
+  .hero-content-left {
+    padding: 13.5rem 0 0 0;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-content-right {
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 75%;
+  }
+  .social-icons-grid {
+    margin: 2.5rem 0 5rem 0;
+  }
 }
 @media only screen and (max-width: 800px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .hero-content-right {
+    width: 100%;
+  }
+  .open-header {
+    display: block;
+  }
   .box {
     padding: 0 2rem;
   }
   .hero-grid {
     grid-template-columns: 1fr;
+    margin: 0;
   }
   .section-heading h2 {
     font-size: 3rem;
@@ -729,9 +810,10 @@ footer {
   .services-content h3 {
     font-size: 2.5rem;
   }
+  .contact-section,
   .services-section,
   .about-section {
-    padding: 3.5rem 0;
+    padding: 5rem 0;
   }
   .about-img {
     width: 100%;
@@ -749,5 +831,14 @@ footer {
   }
   .social-icons-grid a {
     margin: 0 1.5rem 0 0;
+  }
+  .about-grid-right p {
+    font-size: 1.65rem;
+  }
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-links {
+    display: none;
   }
 }

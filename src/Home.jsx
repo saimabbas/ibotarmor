@@ -18,6 +18,7 @@ import { BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
 import HeroImg from "./components/HeroImg";
 import DemoImg from "./components/DemoImg";
+import { MdMenu, MdClose } from "react-icons/md";
 import gsap from "gsap";
 import {
   Back,
@@ -32,6 +33,7 @@ import {
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Home = () => {
+  const [isHeaderOpen, setIsHeaderOpen] = useState(false);
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -60,10 +62,21 @@ const Home = () => {
       .fromTo(
         ".header-content",
         {
-          height: "10rem",
+          height: "8.5rem",
         },
         {
-          height: "5rem",
+          height: "6rem",
+          duration: 0.5,
+        },
+        0
+      )
+      .fromTo(
+        ".header-mob-head",
+        {
+          height: "8.5rem",
+        },
+        {
+          height: "6rem",
           duration: 0.5,
         },
         0
@@ -83,9 +96,67 @@ const Home = () => {
               <a href="#contact">Contact</a>
               <a href="#requestademo">Request a Demo</a>
             </div>
+            <div
+              onClick={() => {
+                setIsHeaderOpen(true);
+              }}
+              className="open-header"
+            >
+              <MdMenu />
+            </div>
           </div>
         </div>
       </header>
+      {isHeaderOpen ? (
+        <div className="header-mob">
+          <div className="box">
+            <div className="header-mob-head">
+              <img src={Logo1} alt="" />
+              <div
+                onClick={() => {
+                  setIsHeaderOpen(false);
+                }}
+              >
+                <MdClose />
+              </div>
+            </div>
+            <div className="header-mob-body">
+              <a
+                onClick={() => {
+                  setIsHeaderOpen(false);
+                }}
+                href="#services"
+              >
+                Services
+              </a>
+              <a
+                onClick={() => {
+                  setIsHeaderOpen(false);
+                }}
+                href="#about"
+              >
+                About Us
+              </a>
+              <a
+                onClick={() => {
+                  setIsHeaderOpen(false);
+                }}
+                href="#contact"
+              >
+                Contact
+              </a>
+              <a
+                onClick={() => {
+                  setIsHeaderOpen(false);
+                }}
+                href="#requestademo"
+              >
+                Request a Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      ) : null}
       <section className="hero-section" id="home">
         <div className="box">
           <div className="hero-content">
